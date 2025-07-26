@@ -1,0 +1,255 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "League Spartan", sans-serif;
+}
+
+body.theme1 {
+    .key.numkeys-theme {
+        color: var(--secondary-text) !important;
+    }
+
+    .key.equal-btn, .key.action-btn-theme {
+        color: var(--primary-text) !important;
+    }
+    // backgrounds
+    --mainBg: hsl(222, 26%, 31%);
+    --toggleBg-and-kepadBg: hsl(223, 31%, 20%);
+    --screen-bg: hsl(224, 36%, 15%);
+
+    // keys
+    --key-bg-1: hsl(225, 21%, 49%);
+    --key-shadow-1: hsl(224, 28%, 35%);
+    --key-bg-and-toggle: hsl(6, 63%, 50%);
+    --key-shadow: hsl(6, 70%, 34%);
+    --key-bg-2: hsl(0, 0%, 90%);
+    --key-shadow-2: hsl(28, 16%, 65%);
+    
+    // Text
+    --primary-text: hsl(0, 100%, 100%);
+    --secondary-text: hsl(221, 14%, 31%);
+}
+
+body.theme2 {
+    color: white;
+    // backgrounds
+    --mainBg: hsl(0, 0%, 90%);
+    --toggleBg-and-kepadBg: hsl(0, 5%, 81%);
+    --screen-bg: hsl(0, 0%, 93%);
+
+    // keys
+    --key-bg-1: hsl(185, 42%, 37%);
+    --key-shadow-1: hsl(185, 58%, 25%);
+    --key-bg-and-toggle: hsl(25, 98%, 40%);
+    --key-shadow: hsl(25, 99%, 27%);
+    --key-bg-2: hsl(0, 0%, 90%);
+    --key-shadow-2: hsl(35, 11%, 61%);
+    
+    // Text
+    --primary-text: hsl(60, 10%, 19%);
+    --secondary-text: hsl(0, 100%, 100%);
+}
+body.theme3 {
+    // backgrounds
+    --mainBg: hsl(268, 75%, 9%);
+    --toggleBg-and-kepadBg: hsl(268, 71%, 12%);
+    --screen-bg: hsl(268, 71%, 12%);
+
+    // keys
+    --key-bg-1: hsl(281, 89%, 26%);
+    --key-shadow-1: hsl(285, 91%, 52%);
+    --key-bg-and-toggle: hsl(176, 100%, 44%);
+    --key-shadow: hsl(177, 92%, 70%);
+    --key-bg-2: hsl(268, 47%, 21%);
+    --key-shadow-2: hsl(290, 70%, 36%);
+    
+    // Text
+    --primary-text: hsl(52, 100%, 62%);
+    --secondary-text: hsl(0, 100%, 100%);
+}
+
+
+body {
+    background-color: var(--mainBg);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+
+    .wrapper {
+        max-width: 400px;
+        width: 100%;
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        // background-color: yellow;
+        .theme-toggle {
+            display: flex;
+            justify-content: space-between;
+
+            .theme-title {
+                align-self: flex-end;
+                color: var(--primary-text);
+                font-size: 24px;
+            }
+
+            .toggle-container {
+                display: flex;
+                gap: 1rem;
+
+                .theme-text {
+                    align-self: flex-end;
+                }
+
+                .theme-text, .toggle-numbers span {
+                    color: var(--primary-text);
+                    font-size: 0.75rem;
+                    font-weight: 400;
+                }
+
+                .toggle-numbers {
+                    display: flex;
+                    gap: 1.1rem;
+                    margin-bottom: 5px;
+                }
+
+                .theme-switch {
+                    display: flex;
+                    justify-content: space-between;
+                    position: relative;
+                    background-color: var(--toggleBg-and-kepadBg);
+                    width: 60px;
+                    padding: 0.1rem;
+                    border-radius: 50px;
+
+                    input[type='radio'] {
+                        appearance: none;
+                        width: 14px;
+                        height: 14px;
+                        margin: 2px;
+                        cursor: pointer;
+                    }
+
+                    .slider {
+                        position: absolute;
+                        top: 4px;
+                        left: 4px;
+                        width: 12px;
+                        height: 12px;
+                        background-color: var(--key-bg-and-toggle);
+                        border-radius: 50%;
+                        cursor: pointer;
+                    }
+
+                    #theme2:checked ~ .slider {
+                        left: 24px;
+                    }
+
+                    #theme3:checked ~ .slider {
+                        left: 43px;
+                    }
+
+                }
+            }
+        }
+
+        .screen {
+            background-color: var(--screen-bg);
+            padding: 28px;
+            border-radius: 10px;
+
+            &-text {
+                color: var(--primary-text);
+                float: inline-end;
+                font-size: 36px;
+            }
+        }
+
+        .keypad {
+            background-color: var(--toggleBg-and-kepadBg);
+            padding: 1rem;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            border-radius: 10px;
+            // gap: 1rem;
+
+            .keys {
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(4,1fr);
+                grid-auto-rows: 64px;
+                // gap: 0.55rem;
+
+                .key {
+                    width: 100%;
+                    background-color: var(--key-bg-2);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 1rem;
+                    height: 50px;
+                    width: 55px;
+                    padding: 0;
+                    border-radius: 10px;
+                    font-size: 26px;
+                    font-weight: 700;
+                    user-select: none;
+                    box-shadow: 0px 5px 0px var(--key-shadow-2);
+                    cursor: pointer;
+                    color: var(--primary-text);
+
+                    @media (min-width: 400px) {
+                        height: 45px;
+                        width: 75px;
+                        box-shadow: 0px 3px 0px var(--key-shadow-2);
+                    }
+                }
+
+                .action-btn-theme {
+                        background-color: var(--key-bg-1);
+                        color: var(--secondary-text);
+                        text-transform: uppercase;
+                        text-align: center;
+                        font-size: 18px;
+                        box-shadow: 0px 5px 0px var(--key-shadow-1);
+                        @media (min-width: 375px) {
+                            box-shadow: 0px 3px 0px var(--key-shadow-1);
+                        }
+                    }
+
+                .reset-btn, .equal-btn {
+                    grid-column: span 2;
+                    grid-row: 5/5;
+                }
+
+                .reset-btn, .equal-btn {
+                    width: 93%;
+                }
+
+                .equal-btn {
+                    background-color: var(--key-bg-and-toggle);
+                    box-shadow: 0px 5px 0px var(--key-shadow);
+                    color: var(--secondary-text);
+                }
+
+            }
+        }
+    }
+
+
+
+    .attribution { 
+        font-size: 11px; 
+        text-align: center; 
+        color: var(--text-2);
+        a { 
+            color: var(--text-2); 
+            font-weight: bold;
+        }
+    }
+}

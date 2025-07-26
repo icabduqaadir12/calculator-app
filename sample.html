@@ -1,0 +1,256 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Theme Toggle Calculator</title>
+  <style>
+    :root {
+      --bg-color: #3b4664;
+      --btn-color: #eae3dc;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      transition: background-color 0.3s;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: sans-serif;
+    }
+
+    .theme-toggle span {
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.theme-numbers {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.theme-numbers span {
+  color: var(--number-color);
+  padding: 0 6px;
+  font-weight: bold;
+}
+
+
+    .theme-switch {
+      position: relative;
+      display: flex;
+      background: #2d3250;
+      border-radius: 50px;
+      padding: 0.3rem;
+      width: 60px;
+      justify-content: space-between;
+    }
+
+    .theme-switch input[type="radio"] {
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      margin: 0;
+      cursor: pointer;
+    }
+
+    .theme-switch .slider {
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 16px;
+      height: 16px;
+      background: red;
+      border-radius: 50%;
+      transition: left 0.3s;
+    }
+
+    #theme2:checked ~ .slider {
+      left: 22px;
+    }
+
+    #theme3:checked ~ .slider {
+      left: 42px;
+    }
+
+    body.theme1 {
+  --bg-color: #3b4664;
+  --btn-color: #eae3dc;
+  --text-color: #ffffff;
+  --number-color: #ffffff;
+}
+
+body.theme2 {
+  --bg-color: #e6e6e6;
+  --btn-color: #d1cccc;
+  --text-color: #000000;
+  --number-color: #333333;
+}
+
+body.theme3 {
+  --bg-color: #17062a;
+  --btn-color: #331c4d;
+  --text-color: #ffe600;
+  --number-color: #e8dcff;
+}
+
+  </style>
+</head>
+<body class="theme1">
+  <div class="theme-toggle">
+    <span>THEME</span>
+    <div class="toggle-container">
+      <div class="theme-numbers">
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+      </div>
+      <div class="theme-switch">
+        <input type="radio" name="theme" id="theme1" checked />
+        <input type="radio" name="theme" id="theme2" />
+        <input type="radio" name="theme" id="theme3" />
+        <div class="slider"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const radios = document.querySelectorAll('input[name="theme"]');
+    radios.forEach(radio => {
+      radio.addEventListener('change', () => {
+        document.body.className = ''; // Clear any existing theme
+        document.body.classList.add(radio.id); // Add theme1 / theme2 / theme3
+      });
+    });
+  </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: var(--bg-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            font-family: sans-serif;
+        }
+
+        body.theme1 {
+            --bg-color: #3b4664;
+            --btn-color: #eae3dc;
+            --text-color: #ffffff;
+            --number-color: #ffffff;
+        }
+
+        body.theme2 {
+        --bg-color: #e6e6e6;
+        --btn-color: #d1cccc;
+        --text-color: #000000;
+        --number-color: #333333;
+        }
+
+        body.theme3 {
+        --bg-color: #17062a;
+        --btn-color: #331c4d;
+        --text-color: #ffe600;
+        --number-color: #e8dcff;
+        }
+
+        .theme-toggle span {
+            font-weight: bold;
+            color: var(--text-color);
+        }
+
+        .theme-numbers {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 4px;
+        }
+
+        .theme-numbers span{
+            color: var(--number-color);
+            padding: 0 6px;
+            font-weight: bold;
+        }
+
+        .theme-switch {
+            display: flex;
+            background-color: #2d3250;
+            border-radius: 50px;
+            padding: 0.3rem;
+            justify-content: space-between;
+            width: 60px;
+            position: relative;
+        }
+
+        .theme-switch input[type='radio'] {
+            appearance: none;
+            margin: 0;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .theme-switch .slider {
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: red;
+        }
+
+        #theme2:checked ~ .slider {
+            left: 22px;
+        }
+
+        #theme3:checked ~ .slider {
+            left: 42px;
+        }
+
+
+    </style>
+</head>
+<body class="theme1">
+    <section class="theme-toggle">
+        <span>THEME</span>
+        <div class="toggle-container">
+            <div class="theme-numbers">
+                <span>1</span>
+                <span>2</span>
+                <span>3</span>
+            </div>
+
+            <div class="theme-switch">
+                <input type="radio" name="theme" id="theme1" checked>
+                <input type="radio" name="theme" id="theme2">
+                <input type="radio" name="theme" id="theme3">
+                <div class="slider"></div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        let radios = document.querySelectorAll("input[type='radio']")
+        console.log(radios);
+
+        radios.forEach(radio => {
+            radio.addEventListener('change', () => {
+                document.body.className = '';
+                document.body.classList.add(radio.id)
+            })
+        })
+        
+    </script>
+</body>
+</html>
